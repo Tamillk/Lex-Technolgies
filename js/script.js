@@ -4,5 +4,5 @@ function showAlert() {
 }
 
 function contactUs() {
-    alert("Contact us at: info@cybersecure.com");
+    alert("Contact us at: contact@lexcyberwall.com");
 }
