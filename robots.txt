@@ -1,2 +1,36 @@
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /config/
+Disallow: /logs/
+Disallow: /backup/
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+Disallow: /*?*
+Disallow: /*/search
+Disallow: /*/login
+Disallow: /*/register
+
+# Block common attack vectors
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /administrator/
+Disallow: /phpmyadmin/
+Disallow: /mysql/
+Disallow: /database/
+Disallow: /db/
+Disallow: /sql/
+Disallow: /.env
+Disallow: /.git/
+Disallow: /.htaccess
+Disallow: /config.php
+Disallow: /install.php
+Disallow: /setup.php
+
+Sitemap: https://lexcyberwall.com/sitemap.xml
