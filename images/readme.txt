@@ -1,1 +1,0 @@
-Matrix-style image background or similar will be placed here.
