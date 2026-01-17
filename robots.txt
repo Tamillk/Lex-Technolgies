@@ -10,6 +10,7 @@ Disallow: /temp/
 Disallow: /cache/
 Disallow: /*.json$
 Disallow: /*.xml$
+Allow: /sitemap.xml
 Disallow: /*.txt$
 Disallow: /*?*
 Disallow: /*/search

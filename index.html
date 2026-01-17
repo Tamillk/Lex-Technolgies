@@ -41,7 +41,7 @@
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
-    <meta name="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self';" />
     
     <!-- Performance Optimizations -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -192,8 +192,77 @@
     
     <script type="module" crossorigin src="/assets/index-ONpgBDwt.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BVhU6nY9.css">
+    <style>
+      /* Static Navigation Bar - Shows above React app */
+      .static-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #1a1a2e;
+        color: white;
+        padding: 1rem 0;
+        z-index: 10000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+      .static-nav .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .static-nav .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+      }
+      .static-nav .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .static-nav .nav-links a {
+        color: white;
+        text-decoration: none;
+        transition: opacity 0.3s;
+      }
+      .static-nav .nav-links a:hover {
+        opacity: 0.8;
+      }
+      body {
+        padding-top: 70px; /* Space for fixed nav */
+      }
+      @media (max-width: 768px) {
+        .static-nav .nav-links {
+          gap: 1rem;
+          font-size: 0.9rem;
+        }
+        .static-nav .logo {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
   </head>
   <body>
+    <!-- Static Navigation - Always Visible -->
+    <nav class="static-nav">
+      <div class="container">
+        <div class="logo">Lex Technologies</div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/case-studies.html">Case Studies</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <!-- React App Container -->
     <div id="root"></div>
   </body>
 </html>
