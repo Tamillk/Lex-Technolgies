@@ -23,3 +23,25 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Security - Never commit these
+*.pem
+*.key
+*.cert
+*.crt
+.env.local
+.env.production
+secrets/
+credentials/
+config.json
+private/
+
+# Backup files
+*.bak
+*.backup
+*.old
+*~
+
+# OS files
+Thumbs.db
+.DS_Store
