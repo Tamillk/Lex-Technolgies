@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" role="img" aria-label="Kubernetes">
+  <g fill="none" fill-rule="evenodd">
+    <path d="M34 12l16 9v18l-16 9-16-9V21l16-9z" fill="#2563EB" opacity="0.92"/>
+    <path d="M34 20l9 5v10l-9 5-9-5V25l9-5z" fill="#ffffff" opacity="0.92"/>
+    <text x="70" y="38" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="900" fill="#0B2B55" letter-spacing="0.6">Kubernetes</text>
+    <text x="70" y="50" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="rgba(6,16,24,0.55)" letter-spacing="2">K8S</text>
+  </g>
+</svg>
+

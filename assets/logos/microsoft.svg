@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" role="img" aria-label="Microsoft">
+  <g fill="none" fill-rule="evenodd">
+    <rect x="10" y="16" width="12" height="12" fill="#F25022"/>
+    <rect x="26" y="16" width="12" height="12" fill="#7FBA00"/>
+    <rect x="10" y="32" width="12" height="12" fill="#00A4EF"/>
+    <rect x="26" y="32" width="12" height="12" fill="#FFB900"/>
+    <text x="52" y="39" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="900" fill="#111827" letter-spacing="0.6">Microsoft</text>
+  </g>
+</svg>
+
