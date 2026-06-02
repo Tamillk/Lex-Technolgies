@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light only" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#f7f5ef" />
+
+    <title>Incident Response Services &amp; Readiness | Tabletop Exercises | Lex Technologies</title>
+    <meta
+      name="description"
+      content="Incident response services and readiness for modern teams: playbooks, tabletop exercises, logging coverage, and escalation paths. Build calm, fast, measurable response."
+    />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/logo-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="assets/logo-192.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <link rel="canonical" href="https://lexcyberwall.com/incident-response.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Incident Response Readiness | Lex Technologies" />
+    <meta
+      property="og:description"
+      content="Incident response services and IR readiness for modern teams: playbooks, tabletop exercises, logging coverage, and escalation paths."
+    />
+    <meta property="og:site_name" content="Lex Technologies" />
+    <meta property="og:url" content="https://lexcyberwall.com/incident-response.html" />
+    <meta property="og:image" content="https://lexcyberwall.com/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Incident Response Readiness | Lex Technologies" />
+    <meta
+      name="twitter:description"
+      content="Incident response services and IR readiness for modern teams: playbooks, tabletop exercises, logging coverage, and escalation paths."
+    />
+    <meta name="twitter:image" content="https://lexcyberwall.com/assets/og.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Lex Technologies",
+        "url": "https://lexcyberwall.com/",
+        "email": "contact@lexcyberwall.com",
+        "description": "Cybersecurity and digital resilience for teams that ship fast.",
+        "logo": "https://lexcyberwall.com/assets/logo-512.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1/108F, Pachapalayam",
+          "addressLocality": "Coimbatore",
+          "addressRegion": "Tamil Nadu",
+          "postalCode": "641107",
+          "addressCountry": "IN"
+        },
+        "contactPoint": [
+          { "@type": "ContactPoint", "contactType": "sales", "email": "contact@lexcyberwall.com", "availableLanguage": ["en"] },
+          { "@type": "ContactPoint", "contactType": "security", "email": "security@lexcyberwall.com", "availableLanguage": ["en"] }
+        ],
+        "areaServed": ["IN", "US", "EU", "AU"]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is incident response readiness?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "IR readiness is a set of playbooks, roles, tooling checks, and drills that enable fast and calm response. It reduces time-to-contain and improves decision-making under pressure."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you run tabletop exercises?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We run tabletop exercises (remote or on-site) with realistic scenarios, then provide a drill report and prioritized improvements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does an IR readiness engagement take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Many teams can complete a focused readiness engagement in 2 to 4 weeks depending on scope and availability of stakeholders."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/site.js" defer></script>
+    <script src="assets/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <canvas id="net" aria-hidden="true"></canvas>
+
+    <header class="top" data-elevate>
+      <div class="wrap topRow">
+        <a class="brand" href="index.html" aria-label="Lex Technologies home">
+          <span class="brandMark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" role="presentation">
+              <path
+                d="M24 4c7.4 5.2 14.7 5.4 18 5.4v16.2C42 37.5 33.7 43.6 24 46 14.3 43.6 6 37.5 6 25.6V9.4c3.3 0 10.6-.2 18-5.4Z"
+                fill="url(#g)"
+                stroke="rgba(6,16,24,.35)"
+                stroke-width="1.2"
+              />
+              <path
+                d="M24 13l9 19h-4.7l-1.8-4.1H21.5L19.7 32H15l9-19Zm.7 10.9-2.1-4.8-2.1 4.8h4.2Z"
+                fill="rgba(6,16,24,.88)"
+              />
+              <defs>
+                <linearGradient id="g" x1="10" y1="6" x2="40" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#16c7a2" />
+                  <stop offset=".55" stop-color="#aef2e4" />
+                  <stop offset="1" stop-color="#f7f5ef" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="brandText">
+            <span class="brandName">Lex</span>
+            <span class="brandSub">Technologies</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button class="navToggle" type="button" aria-controls="menu" aria-expanded="false">
+            <span class="navToggleBars" aria-hidden="true"></span>
+            <span class="navToggleText">Menu</span>
+          </button>
+          <div class="navMenu" id="menu">
+            <a href="services.html">Services</a>
+            <a href="approach.html">Approach</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="resources.html">Resources</a>
+            <a href="clients.html">Clients</a>
+            <a href="about.html">About</a>
+            <a class="navCta" href="contact.html">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="pageHero" id="top" aria-label="Incident response hero">
+        <div class="wrap pageHeroGrid">
+          <div class="reveal">
+            <p class="eyebrow">
+              <span class="pill">Incident Response</span>
+              <span class="eyebrowText">Readiness &bull; playbooks &bull; tabletop drills</span>
+            </p>
+            <h1 class="pageTitle">Incident response readiness services before the incident happens.</h1>
+            <p class="pageLede">
+              We help teams build calm, fast incident response: clear roles, playbooks, logging coverage, and drills that
+              surface gaps before attackers do.
+            </p>
+            <div class="cta">
+              <a class="btn primary" href="contact.html">Request IR readiness</a>
+              <a class="btn ghost" href="services.html">View all services</a>
+            </div>
+          </div>
+
+          <aside class="sideCard reveal" aria-label="IR readiness summary">
+            <p class="sideCardHead mono">Included</p>
+            <ul class="sideCardList">
+              <li>Playbooks for high-risk scenarios</li>
+              <li>Tabletop exercise + drill report</li>
+              <li>Logging and detection checklist</li>
+              <li>Escalation paths and comms plan</li>
+            </ul>
+            <p class="sideCardMeta mono">Typical: 2-4 weeks</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" aria-label="What you get">
+        <div class="wrap">
+          <div class="sectionHead">
+            <h2 class="sectionTitle">What an incident response readiness engagement includes</h2>
+            <p class="sectionSub">Practical readiness artifacts your team can actually use during an incident.</p>
+          </div>
+
+          <div class="cards">
+            <article class="card reveal">
+              <h3 class="cardTitle">Playbooks</h3>
+              <p class="cardBody">Clear steps for containment, investigation, and recovery.</p>
+              <ul class="cardList">
+                <li>Ransomware response</li>
+                <li>Account takeover and identity compromise</li>
+                <li>Data access and exfiltration response</li>
+              </ul>
+            </article>
+            <article class="card reveal">
+              <h3 class="cardTitle">Drills</h3>
+              <p class="cardBody">Tabletop exercises that test decisions, ownership, and tooling.</p>
+              <ul class="cardList">
+                <li>Scenario walkthrough</li>
+                <li>Decision points and communications</li>
+                <li>After-action review</li>
+              </ul>
+            </article>
+            <article class="card reveal">
+              <h3 class="cardTitle">Detection coverage</h3>
+              <p class="cardBody">A coverage map for identity, data access, and privileged actions.</p>
+              <ul class="cardList">
+                <li>Logging checklist</li>
+                <li>High-signal detection backlog</li>
+                <li>Runbooks and ownership</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="briefLinks reveal" aria-label="Related incident response resources">
+            <a href="guide-ir-readiness.html">IR readiness guide</a>
+            <a href="checklist-first-30-minutes.html">First 30 minutes checklist</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" aria-label="How it works">
+        <div class="wrap">
+          <div class="sectionHead">
+            <h2 class="sectionTitle">How it works</h2>
+            <p class="sectionSub">A focused engagement that turns uncertainty into a repeatable response loop.</p>
+          </div>
+
+          <div class="steps">
+            <article class="step reveal">
+              <p class="stepIndex mono">Step 01</p>
+              <h3 class="stepTitle">Map</h3>
+              <p class="stepBody">Identify critical systems, identities, and incident scenarios that matter to you.</p>
+            </article>
+            <article class="step reveal">
+              <p class="stepIndex mono">Step 02</p>
+              <h3 class="stepTitle">Prepare</h3>
+              <p class="stepBody">Draft playbooks, comms plans, escalation paths, and tooling checks.</p>
+            </article>
+            <article class="step reveal">
+              <p class="stepIndex mono">Step 03</p>
+              <h3 class="stepTitle">Drill</h3>
+              <p class="stepBody">Run a tabletop exercise and capture gaps, decisions, and action items.</p>
+            </article>
+            <article class="step reveal">
+              <p class="stepIndex mono">Step 04</p>
+              <h3 class="stepTitle">Improve</h3>
+              <p class="stepBody">Deliver a prioritized roadmap and validate improvements where needed.</p>
+            </article>
+          </div>
+
+          <div class="callout reveal">
+            <div>
+              <h3 class="calloutTitle">Want a readiness baseline?</h3>
+              <p class="calloutBody">Share your stack and key risks. We'll recommend a tight scope that fits your timeline.</p>
+            </div>
+            <a class="btn primary" href="contact.html">Contact Lex</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap footGrid">
+        <div class="footBrand">
+          <p class="footName">Lex Technologies</p>
+          <p class="footSub">Cybersecurity &amp; digital resilience for teams that ship fast.</p>
+          <p class="micro">
+            <a class="mono" href="mailto:contact@lexcyberwall.com" data-email>contact@lexcyberwall.com</a>
+            &bull;
+            <a class="mono" href="mailto:security@lexcyberwall.com" data-security-email>security@lexcyberwall.com</a>
+          </p>
+        </div>
+
+        <div class="footCols" aria-label="Footer">
+          <div class="footCol">
+            <p class="footHead mono">Explore</p>
+            <a href="services.html">Services</a>
+            <a href="approach.html">Approach</a>
+            <a href="case-studies.html">Case studies</a>
+            <a href="resources.html">Resources</a>
+            <a href="clients.html">Clients</a>
+          </div>
+          <div class="footCol">
+            <p class="footHead mono">Company</p>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="#top">Back to top</a>
+          </div>
+          <div class="footCol">
+            <p class="footHead mono">Legal</p>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="security.html">Security disclosure</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap footBottom">
+        <p class="micro">&copy; <span data-year></span> Lex Technologies. All rights reserved.</p>
+        <p class="micro mono">
+          Vulnerability disclosure:
+          <a class="mono" href="mailto:security@lexcyberwall.com" data-security-email>security@lexcyberwall.com</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

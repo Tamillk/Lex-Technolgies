@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light only" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#f7f5ef" />
+
+    <title>Threat Modeling Guide for SaaS &amp; APIs | Lex Technologies</title>
+    <meta
+      name="description"
+      content="Threat modeling guide for SaaS and APIs: map critical workflows, document assumptions, identify attack paths, and convert mitigations into tests and guardrails."
+    />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/logo-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="assets/logo-192.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <link rel="canonical" href="https://lexcyberwall.com/guide-threat-modeling.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Threat Modeling Guide for SaaS &amp; APIs | Lex Technologies" />
+    <meta
+      property="og:description"
+      content="A practical threat modeling approach: focus on critical workflows, document assumptions, and convert mitigations into guardrails and tests."
+    />
+    <meta property="og:site_name" content="Lex Technologies" />
+    <meta property="og:url" content="https://lexcyberwall.com/guide-threat-modeling.html" />
+    <meta property="og:image" content="https://lexcyberwall.com/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Threat Modeling Guide for SaaS &amp; APIs | Lex Technologies" />
+    <meta
+      name="twitter:description"
+      content="A practical threat modeling approach: focus on critical workflows, document assumptions, and convert mitigations into guardrails and tests."
+    />
+    <meta name="twitter:image" content="https://lexcyberwall.com/assets/og.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Lex Technologies",
+        "url": "https://lexcyberwall.com/",
+        "email": "contact@lexcyberwall.com",
+        "description": "Cybersecurity and digital resilience for teams that ship fast.",
+        "logo": "https://lexcyberwall.com/assets/logo-512.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1/108F, Pachapalayam",
+          "addressLocality": "Coimbatore",
+          "addressRegion": "Tamil Nadu",
+          "postalCode": "641107",
+          "addressCountry": "IN"
+        },
+        "contactPoint": [
+          { "@type": "ContactPoint", "contactType": "sales", "email": "contact@lexcyberwall.com", "availableLanguage": ["en"] },
+          { "@type": "ContactPoint", "contactType": "security", "email": "security@lexcyberwall.com", "availableLanguage": ["en"] }
+        ],
+        "areaServed": ["IN", "US", "EU", "AU"]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Threat modeling: keep it simple, keep it useful",
+        "description": "Threat modeling guide for SaaS and APIs: map workflows, identify attack paths, and ship mitigations as guardrails and tests.",
+        "datePublished": "2026-04-09",
+        "dateModified": "2026-04-09",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://lexcyberwall.com/guide-threat-modeling.html" },
+        "author": { "@type": "Organization", "name": "Lex Technologies" },
+        "publisher": { "@type": "Organization", "name": "Lex Technologies", "logo": { "@type": "ImageObject", "url": "https://lexcyberwall.com/assets/logo-512.png" } },
+        "inLanguage": "en",
+        "keywords": ["threat modeling", "secure design", "API security", "SaaS security", "OWASP"]
+      }
+    </script>
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/site.js" defer></script>
+    <script src="assets/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <canvas id="net" aria-hidden="true"></canvas>
+
+    <header class="top" data-elevate>
+      <div class="wrap topRow">
+        <a class="brand" href="index.html" aria-label="Lex Technologies home">
+          <span class="brandMark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" role="presentation">
+              <path
+                d="M24 4c7.4 5.2 14.7 5.4 18 5.4v16.2C42 37.5 33.7 43.6 24 46 14.3 43.6 6 37.5 6 25.6V9.4c3.3 0 10.6-.2 18-5.4Z"
+                fill="url(#g)"
+                stroke="rgba(6,16,24,.35)"
+                stroke-width="1.2"
+              />
+              <path
+                d="M24 13l9 19h-4.7l-1.8-4.1H21.5L19.7 32H15l9-19Zm.7 10.9-2.1-4.8-2.1 4.8h4.2Z"
+                fill="rgba(6,16,24,.88)"
+              />
+              <defs>
+                <linearGradient id="g" x1="10" y1="6" x2="40" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#16c7a2" />
+                  <stop offset=".55" stop-color="#aef2e4" />
+                  <stop offset="1" stop-color="#f7f5ef" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="brandText">
+            <span class="brandName">Lex</span>
+            <span class="brandSub">Technologies</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button class="navToggle" type="button" aria-controls="menu" aria-expanded="false">
+            <span class="navToggleBars" aria-hidden="true"></span>
+            <span class="navToggleText">Menu</span>
+          </button>
+          <div class="navMenu" id="menu">
+            <a href="services.html">Services</a>
+            <a href="approach.html">Approach</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="resources.html">Resources</a>
+            <a href="clients.html">Clients</a>
+            <a href="about.html">About</a>
+            <a class="navCta" href="contact.html">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="pageHero" id="top" aria-label="Threat modeling guide hero">
+        <div class="wrap pageHeroGrid">
+          <div class="reveal">
+            <p class="eyebrow">
+              <span class="pill">Guide</span>
+              <span class="eyebrowText">Threat modeling &bull; critical workflows &bull; mitigations</span>
+            </p>
+            <h1 class="pageTitle">Threat modeling: keep it simple, keep it useful.</h1>
+            <p class="pageLede">
+              Threat modeling should produce engineering work: tests, guardrails, and design decisions that reduce risk. This
+              guide focuses on practical workflows and repeatable artifacts.
+            </p>
+            <div class="cta">
+              <a class="btn primary" href="services.html">Security services</a>
+              <a class="btn ghost" href="resources.html">Back to resources</a>
+            </div>
+          </div>
+
+          <aside class="sideCard reveal" aria-label="Guide quick facts">
+            <p class="sideCardHead mono">At a glance</p>
+            <ul class="sideCardList">
+              <li>Timebox: 60-90 minutes per workflow</li>
+              <li>Output: attack-path map + backlog</li>
+              <li>Best for: SaaS, APIs, admin tooling</li>
+            </ul>
+            <p class="sideCardMeta mono">Updated: 9 April 2026</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section alt" aria-label="Threat modeling guide content">
+        <div class="wrap legalGrid">
+          <div class="docCard reveal">
+            <p class="docMeta mono">Guide</p>
+            <h2 class="sectionTitle">A practical threat modeling loop</h2>
+            <p class="sectionSub">Focus on the workflows that matter, and ship mitigations as engineering changes.</p>
+
+            <div class="policy" role="document" aria-label="Threat modeling guide">
+              <h3>1. Pick one workflow</h3>
+              <p>Choose a workflow that can cause business impact.</p>
+              <ul>
+                <li>Authentication and session lifecycle</li>
+                <li>Payments, payouts, refunds, and admin changes</li>
+                <li>Data export, reporting, or bulk access paths</li>
+              </ul>
+
+              <h3>2. Draw the data flow (fast)</h3>
+              <p>You need a useful picture, not a perfect diagram.</p>
+              <ul>
+                <li>Actors: user/admin/support/service account</li>
+                <li>Entry points: web, API, mobile, internal tools</li>
+                <li>Trust boundaries: auth, network, tenant boundaries, third parties</li>
+              </ul>
+
+              <h3>3. Identify attack paths</h3>
+              <p>Ask “how would this break?” and “what would the impact be?”</p>
+              <ul>
+                <li>Abuse cases: replay, privilege escalation, IDOR, session fixation</li>
+                <li>Integration risks: webhook abuse, signature validation, key handling</li>
+                <li>Admin tooling: support overrides and approval paths</li>
+              </ul>
+
+              <h3>4. Decide mitigations and assign owners</h3>
+              <p>Mitigations must turn into real work with an owner and a due date.</p>
+              <ul>
+                <li>Prevent: authorization checks, step-up auth, rate limiting</li>
+                <li>Detect: audit logs and high-signal alerts for sensitive actions</li>
+                <li>Recover: rollback plans and evidence capture</li>
+              </ul>
+
+              <h3>5. Convert mitigations into guardrails</h3>
+              <p>Make good behavior the default.</p>
+              <ul>
+                <li>Tests: regression tests for authorization and abuse cases</li>
+                <li>Checklists: secure design review for new workflows</li>
+                <li>CI guardrails: secrets checks, dependency checks, policy-as-code</li>
+              </ul>
+
+              <h3>6. Review on cadence</h3>
+              <p>Threat models should evolve as the system evolves.</p>
+              <ul>
+                <li>Review after major feature launches</li>
+                <li>Review after incidents or high-severity findings</li>
+                <li>Review quarterly for critical workflows</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="sideCard reveal" aria-label="Outputs">
+            <p class="sideCardHead mono">Outputs</p>
+            <ul class="sideCardList">
+              <li>Threat model notes per workflow</li>
+              <li>Top risks and assumptions</li>
+              <li>Mitigation backlog with owners</li>
+              <li>Tests and guardrails to prevent regression</li>
+            </ul>
+            <p class="sideCardMeta mono">Need a workshop? <a href="contact.html">Contact Lex</a></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Next steps">
+        <div class="wrap">
+          <div class="callout reveal">
+            <div>
+              <h3 class="calloutTitle">Want a threat modeling workshop for your team?</h3>
+              <p class="calloutBody">
+                We can run a focused session, produce a backlog, and help teams ship guardrails. Lex supports teams in India
+                and globally.
+              </p>
+            </div>
+            <a class="btn primary" href="contact.html">Book a workshop</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap footGrid">
+        <div class="footBrand">
+          <p class="footName">Lex Technologies</p>
+          <p class="footSub">Cybersecurity &amp; digital resilience for teams that ship fast.</p>
+          <p class="micro">
+            <a class="mono" href="mailto:contact@lexcyberwall.com" data-email>contact@lexcyberwall.com</a>
+            &bull;
+            <a class="mono" href="mailto:security@lexcyberwall.com" data-security-email>security@lexcyberwall.com</a>
+          </p>
+        </div>
+
+        <div class="footCols" aria-label="Footer">
+          <div class="footCol">
+            <p class="footHead mono">Explore</p>
+            <a href="services.html">Services</a>
+            <a href="approach.html">Approach</a>
+            <a href="case-studies.html">Case studies</a>
+            <a href="resources.html">Resources</a>
+            <a href="clients.html">Clients</a>
+          </div>
+          <div class="footCol">
+            <p class="footHead mono">Company</p>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="#top">Back to top</a>
+          </div>
+          <div class="footCol">
+            <p class="footHead mono">Legal</p>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="security.html">Security disclosure</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap footBottom">
+        <p class="micro">&copy; <span data-year></span> Lex Technologies. All rights reserved.</p>
+        <p class="micro mono">
+          Vulnerability disclosure:
+          <a class="mono" href="mailto:security@lexcyberwall.com" data-security-email>security@lexcyberwall.com</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
+

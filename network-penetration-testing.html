@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light only" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#f7f5ef" />
+
+    <title>Network Penetration Testing Services | Internal &amp; External Network Security Testing | Lex Technologies</title>
+    <meta
+      name="description"
+      content="Network penetration testing services for internal and external networks, exposed services, Active Directory, segmentation, lateral movement, and privilege escalation."
+    />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/logo-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="assets/logo-192.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <link rel="canonical" href="https://lexcyberwall.com/network-penetration-testing.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Network Penetration Testing Services | Lex Technologies" />
+    <meta
+      property="og:description"
+      content="Internal and external network penetration testing for exposed services, Active Directory, segmentation, and lateral movement."
+    />
+    <meta property="og:site_name" content="Lex Technologies" />
+    <meta property="og:url" content="https://lexcyberwall.com/network-penetration-testing.html" />
+    <meta property="og:image" content="https://lexcyberwall.com/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Network Penetration Testing Services | Lex Technologies" />
+    <meta
+      name="twitter:description"
+      content="Internal and external network penetration testing for exposed services, Active Directory, segmentation, and lateral movement."
+    />
+    <meta name="twitter:image" content="https://lexcyberwall.com/assets/og.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Lex Technologies",
+        "url": "https://lexcyberwall.com/",
+        "email": "contact@lexcyberwall.com",
+        "description": "Cybersecurity services company delivering penetration testing, VAPT, security consulting, cloud security, incident response readiness, and compliance support.",
+        "logo": "https://lexcyberwall.com/assets/logo-512.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1/108F, Pachapalayam",
+          "addressLocality": "Coimbatore",
+          "addressRegion": "Tamil Nadu",
+          "postalCode": "641107",
+          "addressCountry": "IN"
+        },
+        "contactPoint": [
+          { "@type": "ContactPoint", "contactType": "sales", "email": "contact@lexcyberwall.com", "availableLanguage": ["en"] },
+          { "@type": "ContactPoint", "contactType": "security", "email": "security@lexcyberwall.com", "availableLanguage": ["en"] }
+        ],
+        "areaServed": ["IN", "US", "EU", "AU"]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Network Penetration Testing Services",
+        "serviceType": "Network Penetration Testing",
+        "provider": {
+          "@type": "Organization",
+          "name": "Lex Technologies",
+          "url": "https://lexcyberwall.com/"
+        },
+        "areaServed": ["IN", "US", "EU", "AU"],
+        "url": "https://lexcyberwall.com/network-penetration-testing.html",
+        "description": "Internal and external network penetration testing for exposed services, Active Directory, segmentation, lateral movement, and privilege escalation."
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does network penetration testing cover?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Network penetration testing typically covers internet-facing services, internal networks, segmentation, exposed hosts, Active Directory, lateral movement, weak credentials, and privilege escalation paths."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you test internal networks and Active Directory?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Internal network and Active Directory testing commonly includes privilege escalation, credential attack paths, trust relationships, misconfigurations, and containment weaknesses."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is network penetration testing different from vulnerability scanning?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vulnerability scanning identifies possible weaknesses. Network penetration testing adds manual validation, chaining of attack paths, and proof of impact so the final report reflects real risk rather than scan output alone."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/site.js" defer></script>
+    <script src="assets/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <canvas id="net" aria-hidden="true"></canvas>
+
+    <header class="top" data-elevate>
+      <div class="wrap topRow">
+        <a class="brand" href="index.html" aria-label="Lex Technologies home">
+          <span class="brandMark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" role="presentation">
+              <path
+                d="M24 4c7.4 5.2 14.7 5.4 18 5.4v16.2C42 37.5 33.7 43.6 24 46 14.3 43.6 6 37.5 6 25.6V9.4c3.3 0 10.6-.2 18-5.4Z"
+                fill="url(#g)"
+                stroke="rgba(6,16,24,.35)"
+                stroke-width="1.2"
+              />
+              <path
+                d="M24 13l9 19h-4.7l-1.8-4.1H21.5L19.7 32H15l9-19Zm.7 10.9-2.1-4.8-2.1 4.8h4.2Z"
+                fill="rgba(6,16,24,.88)"
+              />
+              <defs>
+                <linearGradient id="g" x1="10" y1="6" x2="40" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#16c7a2" />
+                  <stop offset=".55" stop-color="#aef2e4" />
+                  <stop offset="1" stop-color="#f7f5ef" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="brandText">
+            <span class="brandName">Lex</span>
+            <span class="brandSub">Technologies</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button class="navToggle" type="button" aria-controls="menu" aria-expanded="false">
+            <span class="navToggleBars" aria-hidden="true"></span>
+            <span class="navToggleText">Menu</span>
+          </button>
+          <div class="navMenu" id="menu">
+            <a href="services.html">Services</a>
+            <a href="approach.html">Approach</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="resources.html">Resources</a>
+            <a href="clients.html">Clients</a>
+            <a href="about.html">About</a>
+            <a class="navCta" href="contact.html">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="pageHero" id="top" aria-label="Network penetration testing hero">
+        <div class="wrap pageHeroGrid">
+          <div class="reveal">
+            <p class="eyebrow">
+              <span class="pill">Network Pentest</span>
+              <span class="eyebrowText">Internal &bull; external &bull; lateral movement</span>
+            </p>
+            <h1 class="pageTitle">Network penetration testing services for internal and external attack paths.</h1>
+            <p class="pageLede">
+              Lex tests exposed services, internal networks, Active Directory, segmentation boundaries, and privilege paths
+              so you can understand how a real attacker could move through your environment.
+            </p>
+            <div class="cta">
+              <a class="btn primary" href="contact.html">Request a network pentest</a>
+              <a class="btn ghost" href="penetration-testing.html">All penetration testing</a>
+            </div>
+          </div>
+
+          <aside class="sideCard reveal" aria-label="Network pentest summary">
+            <p class="sideCardHead mono">Typical targets</p>
+            <ul class="sideCardList">
+              <li>Internet-facing services and exposed infrastructure</li>
+              <li>Internal network segments and trust boundaries</li>
+              <li>Active Directory and Windows attack paths</li>
+              <li>Privilege escalation and containment gaps</li>
+            </ul>
+            <p class="sideCardMeta mono">Outcome: validated network risk</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" aria-label="What network testing covers">
+        <div class="wrap">
+          <div class="sectionHead">
+            <h2 class="sectionTitle">What network penetration testing covers</h2>
+            <p class="sectionSub">The focus is on how attackers get in, move laterally, and escalate access.</p>
+          </div>
+
+          <div class="cards">
+            <article class="card reveal">
+              <h3 class="cardTitle">External attack surface</h3>
+              <p class="cardBody">Review exposed hosts, services, remote access paths, and internet-facing weaknesses.</p>
+              <ul class="cardList">
+                <li>Perimeter services and entry points</li>
+                <li>VPN, remote access, and management exposure</li>
+                <li>Weak auth and overlooked public services</li>
+              </ul>
+            </article>
+
+            <article class="card reveal">
+              <h3 class="cardTitle">Internal networks and AD</h3>
+              <p class="cardBody">Test segmentation, trust relationships, credential paths, and directory risk.</p>
+              <ul class="cardList">
+                <li>Active Directory privilege paths</li>
+                <li>Shared credentials and excessive trust</li>
+                <li>Segmentation and containment weaknesses</li>
+              </ul>
+            </article>
+
+            <article class="card reveal">
+              <h3 class="cardTitle">Lateral movement and escalation</h3>
+              <p class="cardBody">Validate how far an attacker can move once a foothold is gained.</p>
+              <ul class="cardList">
+                <li>Privilege escalation chains</li>
+                <li>Local admin and delegation weaknesses</li>
+                <li>Evidence-backed impact narrative</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="briefLinks reveal" aria-label="Related network security links">
+            <a href="penetration-testing.html">Penetration testing services</a>
+            <a href="vapt.html">VAPT services</a>
+            <a href="security-audit.html">Security audit</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" aria-label="How the engagement runs">
+        <div class="wrap">
+          <div class="sectionHead">
+            <h2 class="sectionTitle">How the engagement runs</h2>
+            <p class="sectionSub">Clear scope, safe execution, and proof that helps defenders act fast.</p>
+          </div>
+
+          <div class="steps">
+            <article class="step reveal">
+              <p class="stepIndex mono">Step 01</p>
+              <h3 class="stepTitle">Scope</h3>
+              <p class="stepBody">Define external ranges, internal segments, accounts, rules of engagement, and safety constraints.</p>
+            </article>
+            <article class="step reveal">
+              <p class="stepIndex mono">Step 02</p>
+              <h3 class="stepTitle">Enumerate</h3>
+              <p class="stepBody">Map services, identify trust boundaries, and locate likely footholds and privilege paths.</p>
+            </article>
+            <article class="step reveal">
+              <p class="stepIndex mono">Step 03</p>
+              <h3 class="stepTitle">Validate</h3>
+              <p class="stepBody">Test lateral movement, escalation, and segmentation weaknesses with agreed constraints.</p>
+            </article>
+            <article class="step reveal">
+              <p class="stepIndex mono">Step 04</p>
+              <h3 class="stepTitle">Report</h3>
+              <p class="stepBody">Provide prioritized findings, affected paths, and remediation steps defenders can execute.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="FAQ">
+        <div class="wrap">
+          <div class="sectionHead">
+            <h2 class="sectionTitle">FAQ</h2>
+            <p class="sectionSub">A few common questions about network penetration testing.</p>
+          </div>
+
+          <div class="faq">
+            <details class="faqItem reveal">
+              <summary>What does network penetration testing cover?</summary>
+              <p>
+                Network penetration testing typically covers internet-facing services, internal networks, segmentation,
+                exposed hosts, Active Directory, lateral movement, weak credentials, and privilege escalation paths.
+              </p>
+            </details>
+
+            <details class="faqItem reveal">
+              <summary>Do you test internal networks and Active Directory?</summary>
+              <p>
+                Yes. Internal network and Active Directory testing commonly includes privilege escalation, credential
+                attack paths, trust relationships, misconfigurations, and containment weaknesses.
+              </p>
+            </details>
+
+            <details class="faqItem reveal">
+              <summary>How is network penetration testing different from vulnerability scanning?</summary>
+              <p>
+                Vulnerability scanning identifies possible weaknesses. Network penetration testing adds manual validation,
+                chaining of attack paths, and proof of impact so the final report reflects real risk rather than scan
+                output alone.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" aria-label="Contact call to action">
+        <div class="wrap">
+          <div class="callout reveal">
+            <div>
+              <h3 class="calloutTitle">Need an internal or external network pentest scoped quickly?</h3>
+              <p class="calloutBody">
+                Share your environment, user segments, and constraints. We will reply with a clear scope and next step.
+              </p>
+            </div>
+            <a class="btn primary" href="contact.html">Talk to Lex</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap footGrid">
+        <div class="footBrand">
+          <p class="footName">Lex Technologies</p>
+          <p class="footSub">Cybersecurity &amp; digital resilience for teams that ship fast.</p>
+          <p class="micro">
+            <a class="mono" href="mailto:contact@lexcyberwall.com" data-email>contact@lexcyberwall.com</a>
+            &bull;
+            <a class="mono" href="mailto:security@lexcyberwall.com" data-security-email>security@lexcyberwall.com</a>
+          </p>
+        </div>
+
+        <div class="footCols" aria-label="Footer">
+          <div class="footCol">
+            <p class="footHead mono">Explore</p>
+            <a href="services.html">Services</a>
+            <a href="approach.html">Approach</a>
+            <a href="case-studies.html">Case studies</a>
+            <a href="resources.html">Resources</a>
+            <a href="clients.html">Clients</a>
+          </div>
+          <div class="footCol">
+            <p class="footHead mono">Company</p>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="#top">Back to top</a>
+          </div>
+          <div class="footCol">
+            <p class="footHead mono">Legal</p>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="security.html">Security disclosure</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap footBottom">
+        <p class="micro">&copy; <span data-year></span> Lex Technologies. All rights reserved.</p>
+        <p class="micro mono">
+          Vulnerability disclosure:
+          <a class="mono" href="mailto:security@lexcyberwall.com" data-security-email>security@lexcyberwall.com</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

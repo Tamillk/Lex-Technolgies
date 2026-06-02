@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light only" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#f7f5ef" />
+
+    <title>Lex Technologies | Cybersecurity Services Company in India | Pentest, VAPT &amp; Security Consulting</title>
+    <meta
+      name="description"
+      content="Cybersecurity services company in India serving clients worldwide. Penetration testing, VAPT, security consulting, cloud security assessment, network penetration testing, incident response, and compliance support."
+    />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/logo-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="assets/logo-192.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <link rel="canonical" href="https://lexcyberwall.com/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lex Technologies" />
+    <meta
+      property="og:description"
+      content="Cybersecurity services company in India for penetration testing, VAPT, security consulting, cloud security, incident response, and compliance readiness."
+    />
+    <meta property="og:site_name" content="Lex Technologies" />
+    <meta property="og:url" content="https://lexcyberwall.com/" />
+    <meta property="og:image" content="https://lexcyberwall.com/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lex Technologies" />
+    <meta
+      name="twitter:description"
+      content="Cybersecurity services company in India for penetration testing, VAPT, security consulting, cloud security, incident response, and compliance readiness."
+    />
+    <meta name="twitter:image" content="https://lexcyberwall.com/assets/og.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Lex Technologies",
+        "url": "https://lexcyberwall.com/",
+        "email": "contact@lexcyberwall.com",
+        "description": "Cybersecurity services company delivering penetration testing, VAPT, security consulting, cloud security, incident response readiness, and compliance support.",
+        "logo": "https://lexcyberwall.com/assets/logo-512.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1/108F, Pachapalayam",
+          "addressLocality": "Coimbatore",
+          "addressRegion": "Tamil Nadu",
+          "postalCode": "641107",
+          "addressCountry": "IN"
+        },
+        "contactPoint": [
+          { "@type": "ContactPoint", "contactType": "sales", "email": "contact@lexcyberwall.com", "availableLanguage": ["en"] },
+          { "@type": "ContactPoint", "contactType": "security", "email": "security@lexcyberwall.com", "availableLanguage": ["en"] }
+        ],
+        "areaServed": ["IN", "US", "EU", "AU"]
+      }
+    </script>
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/site.js" defer></script>
+    <script src="assets/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <canvas id="net" aria-hidden="true"></canvas>
+
+    <header class="top" data-elevate>
+      <div class="wrap topRow">
+        <a class="brand" href="index.html" aria-label="Lex Technologies home">
+          <span class="brandMark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" role="presentation">
+              <path
+                d="M24 4c7.4 5.2 14.7 5.4 18 5.4v16.2C42 37.5 33.7 43.6 24 46 14.3 43.6 6 37.5 6 25.6V9.4c3.3 0 10.6-.2 18-5.4Z"
+                fill="url(#g)"
+                stroke="rgba(6,16,24,.35)"
+                stroke-width="1.2"
+              />
+              <path
+                d="M24 13l9 19h-4.7l-1.8-4.1H21.5L19.7 32H15l9-19Zm.7 10.9-2.1-4.8-2.1 4.8h4.2Z"
+                fill="rgba(6,16,24,.88)"
+              />
+              <defs>
+                <linearGradient id="g" x1="10" y1="6" x2="40" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#16c7a2" />
+                  <stop offset=".55" stop-color="#aef2e4" />
+                  <stop offset="1" stop-color="#f7f5ef" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="brandText">
+            <span class="brandName">Lex</span>
+            <span class="brandSub">Technologies</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button class="navToggle" type="button" aria-controls="menu" aria-expanded="false">
+            <span class="navToggleBars" aria-hidden="true"></span>
+            <span class="navToggleText">Menu</span>
+          </button>
+          <div class="navMenu" id="menu">
+            <a href="services.html">Services</a>
+            <a href="approach.html">Approach</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="resources.html">Resources</a>
+            <a href="clients.html">Clients</a>
+            <a href="about.html">About</a>
+            <a class="navCta" href="contact.html">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-label="Hero">
+        <div class="wrap heroGrid">
+          <div class="heroCopy">
+            <p class="eyebrow">
+              <span class="pill">Cybersecurity</span>
+              <span class="eyebrowText">Assess &bull; Harden &bull; Monitor</span>
+            </p>
+
+            <h1 class="headline">
+              Cybersecurity that feels like an <span class="headlineAccent">unfair advantage</span>.
+            </h1>
+
+            <p class="lede">
+              Lex Technologies is an India-based cybersecurity services company helping teams reduce risk without slowing
+              down. We combine penetration testing, VAPT, security consulting, cloud hardening, and monitoring so you can
+              ship confidently.
+            </p>
+
+            <div class="cta">
+              <a class="btn primary" href="contact.html">Request an assessment</a>
+              <a class="btn ghost" href="services.html">Explore services</a>
+            </div>
+
+            <div class="signal">
+              <div class="signalItem">
+                <p class="signalKicker">Built for reality</p>
+                <p class="signalValue">Pragmatic, evidence driven remediation.</p>
+              </div>
+              <div class="signalItem">
+                <p class="signalKicker">Clear reporting</p>
+                <p class="signalValue">Executive narrative plus engineering proof.</p>
+              </div>
+              <div class="signalItem">
+                <p class="signalKicker">Fast handoff</p>
+                <p class="signalValue">Actionable fixes, not just findings.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="heroPanel" aria-label="Threat snapshot panel">
+            <div class="panelTop">
+              <div class="panelDots" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <p class="panelTitle">
+                <span class="mono">Lex</span> threat snapshot
+              </p>
+              <div class="panelBadge" aria-hidden="true">
+                <span class="pulse"></span>
+                <span class="mono">SAMPLE OUTPUT</span>
+              </div>
+            </div>
+            <div class="terminal" role="img" aria-label="Sample security console output">
+              <pre class="terminalPre" data-typing>
+$ lex assess --scope prod --window 24h --mode safe
+-> surface mapping.................... ok
+-> auth boundary checks............... ok
+-> cloud posture signals.............. ok
+
+[10:12:18] AUTH  P1  Session cookie missing SameSite=Strict
+[10:13:02] IAM   P2  Unused wildcard permission in role: ci-deploy
+[10:13:44] DEPS  P3  OpenSSL patch available (upgrade recommended)
+[10:14:21] API   P2  Missing rate limits on sensitive endpoint
+
+next actions:
+  1) ship session hardening + tests
+  2) rightsise IAM + add guardrail
+  3) patch dependencies + verify SBOM
+              </pre>
+            </div>
+
+            <div class="panelFooter">
+              <p class="micro">Prioritized findings, evidence, and a remediation roadmap.</p>
+              <a class="miniLink" href="approach.html">How we work</a>
+            </div>
+          </div>
+
+          <div class="sectionCta reveal">
+            <a class="btn ghost" href="services.html">View all services</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section slim" aria-label="Clients and platforms">
+        <div class="wrap">
+          <div class="logoWall reveal">
+            <div class="logoWallHead">
+              <p class="logoWallKicker mono">Approved clients and ecosystem</p>
+              <a class="miniLink miniLinkLight" href="clients.html">View clients</a>
+            </div>
+            <div class="logoGrid" role="list" aria-label="Client and platform logos">
+              <div class="logoTile" role="listitem">
+                <img src="assets/logos/sap.svg" alt="SAP" loading="lazy" decoding="async" />
+              </div>
+              <div class="logoTile" role="listitem">
+                <img src="assets/logos/digitalocean.svg" alt="DigitalOcean" loading="lazy" decoding="async" />
+              </div>
+              <div class="logoTile" role="listitem">
+                <img src="assets/logos/vultr.svg" alt="Vultr" loading="lazy" decoding="async" />
+              </div>
+              <div class="logoTile" role="listitem">
+                <img src="assets/logos/cloudflare.svg" alt="Cloudflare" loading="lazy" decoding="async" />
+              </div>
+              <div class="logoTile" role="listitem">
+                <img src="assets/logos/github.svg" alt="GitHub" loading="lazy" decoding="async" />
+              </div>
+              <div class="logoTile" role="listitem">
+                <img src="assets/logos/atlassian.svg" alt="Atlassian" loading="lazy" decoding="async" />
+              </div>
+              <div class="logoTile" role="listitem">
+                <img src="assets/logos/aws.svg" alt="AWS" loading="lazy" decoding="async" />
+              </div>
+              <div class="logoTile" role="listitem">
+                <img src="assets/logos/microsoft.svg" alt="Microsoft" loading="lazy" decoding="async" />
+              </div>
+              <div class="logoTile" role="listitem">
+                <img src="assets/logos/google-cloud.svg" alt="Google Cloud" loading="lazy" decoding="async" />
+              </div>
+              <div class="logoTile" role="listitem">
+                <img src="assets/logos/kubernetes.svg" alt="Kubernetes" loading="lazy" decoding="async" />
+              </div>
+              <div class="logoTile" role="listitem">
+                <img src="assets/logos/terraform.svg" alt="Terraform" loading="lazy" decoding="async" />
+              </div>
+              <div class="logoTile" role="listitem">
+                <img src="assets/logos/okta.svg" alt="Okta" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <p class="micro">
+              Approved client logos are listed on the Clients page. Other logos may refer to platforms/tools we secure and do
+              not imply partnership or endorsement. Logos are trademarks of their respective owners.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" aria-label="Global coverage">
+        <div class="wrap">
+          <div class="sectionHead">
+            <h2 class="sectionTitle">Global delivery across time zones</h2>
+            <p class="sectionSub">
+              Lex supports teams worldwide, including clients in India, the USA, Europe, and Australia. Engagements are
+              remote-first, with a clear cadence and executive-ready reporting.
+            </p>
+          </div>
+
+          <div class="steps">
+            <article class="step reveal">
+              <p class="stepIndex mono">IN</p>
+              <h3 class="stepTitle">India</h3>
+              <p class="stepBody">Fast scoping, focused testing, and practical remediation support.</p>
+            </article>
+            <article class="step reveal">
+              <p class="stepIndex mono">US</p>
+              <h3 class="stepTitle">United States</h3>
+              <p class="stepBody">Security that aligns with modern engineering delivery and compliance expectations.</p>
+            </article>
+            <article class="step reveal">
+              <p class="stepIndex mono">EU</p>
+              <h3 class="stepTitle">Europe</h3>
+              <p class="stepBody">Clear controls mapping, evidence, and monitoring signal improvements.</p>
+            </article>
+            <article class="step reveal">
+              <p class="stepIndex mono">AU</p>
+              <h3 class="stepTitle">Australia</h3>
+              <p class="stepBody">Incident readiness, hardening sprints, and release-aligned testing.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services" aria-label="Services">
+        <div class="wrap">
+          <div class="sectionHead">
+            <h2 class="sectionTitle">Services that cover the full attack path</h2>
+            <p class="sectionSub">
+              Pick a single engagement or combine them into a continuous security program.
+            </p>
+          </div>
+
+          <div class="cards">
+            <article class="card reveal">
+              <h3 class="cardTitle">Penetration Testing &amp; VAPT</h3>
+              <p class="cardBody">
+                Web application, API, cloud, and internal network testing with clear exploit narratives and validated risk.
+              </p>
+              <ul class="cardList">
+                <li>OWASP aligned methodology</li>
+                <li>Proof of exploit and impact</li>
+                <li>Developer friendly fix guidance</li>
+              </ul>
+              <div class="briefLinks" aria-label="Penetration testing services">
+                <a href="penetration-testing.html">Penetration testing</a>
+                <a href="web-application-penetration-testing.html">Web app pentest</a>
+                <a href="api-penetration-testing.html">API pentest</a>
+                <a href="network-penetration-testing.html">Network pentest</a>
+                <a href="vapt.html">VAPT</a>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <h3 class="cardTitle">Cloud Security &amp; IAM Hardening</h3>
+              <p class="cardBody">
+                Cloud security assessments, configuration reviews, and secure baselines for cloud, endpoints, and identity.
+              </p>
+              <ul class="cardList">
+                <li>Cloud posture and IAM</li>
+                <li>Secure SDLC guardrails</li>
+                <li>Threat modeling workshops</li>
+              </ul>
+              <div class="briefLinks" aria-label="Cloud security services">
+                <a href="cloud-security.html">Cloud security assessment</a>
+                <a href="cybersecurity-consulting.html">Security consulting</a>
+                <a href="guide-iam-hardening.html">IAM hardening guide</a>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <h3 class="cardTitle">Monitoring, Detection &amp; Incident Response</h3>
+              <p class="cardBody">Detection engineering and incident response planning designed for your team.</p>
+              <ul class="cardList">
+                <li>Log coverage and use cases</li>
+                <li>Playbooks and tabletop drills</li>
+                <li>Post incident hardening</li>
+              </ul>
+              <div class="briefLinks" aria-label="Incident response services">
+                <a href="incident-response.html">Incident response services</a>
+                <a href="guide-ir-readiness.html">IR readiness guide</a>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <h3 class="cardTitle">Compliance Readiness &amp; Security Audit Support</h3>
+              <p class="cardBody">
+                Translate controls into working engineering practice for SOC 2, ISO 27001, PCI DSS, and security reviews.
+              </p>
+              <ul class="cardList">
+                <li>Gap analysis and evidence maps</li>
+                <li>Policy drafts and templates</li>
+                <li>Audit support when required</li>
+              </ul>
+              <div class="briefLinks" aria-label="Compliance and audit services">
+                <a href="compliance-readiness.html">Compliance readiness</a>
+                <a href="security-audit.html">Security audit</a>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <h3 class="cardTitle">Application Security Reviews</h3>
+              <p class="cardBody">Secure deployments, CI/CD, secrets, sessions, and runtime protections across cloud providers.</p>
+              <ul class="cardList">
+                <li>Kubernetes and container review</li>
+                <li>Secrets management</li>
+                <li>Security architecture guidance</li>
+              </ul>
+              <div class="briefLinks" aria-label="Application security services">
+                <a href="web-application-penetration-testing.html">Web application testing</a>
+                <a href="api-penetration-testing.html">API security testing</a>
+                <a href="mobile-application-security-testing.html">Mobile app security testing</a>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <h3 class="cardTitle">Training That Sticks</h3>
+              <p class="cardBody">Practical workshops for engineers, IT, and executives. No fear mongering.</p>
+              <ul class="cardList">
+                <li>Secure coding patterns</li>
+                <li>Phishing resilience</li>
+                <li>Leadership risk calibration</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Most requested cybersecurity services">
+        <div class="wrap">
+          <div class="sectionHead">
+            <h2 class="sectionTitle">Most requested cybersecurity services</h2>
+            <p class="sectionSub">
+              These are the service searches we see most often from teams looking for a cybersecurity company that can
+              actually deliver.
+            </p>
+          </div>
+
+          <div class="cards">
+            <article class="card reveal">
+              <h3 class="cardTitle">Web application penetration testing</h3>
+              <p class="cardBody">Exploit-driven testing for auth, sessions, business logic, and sensitive workflows.</p>
+              <div class="briefLinks" aria-label="Web application penetration testing links">
+                <a href="web-application-penetration-testing.html">Web app pentest</a>
+                <a href="penetration-testing.html">All penetration testing</a>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <h3 class="cardTitle">API penetration testing</h3>
+              <p class="cardBody">Authorization, tenant isolation, token scope, and high-risk endpoint abuse-case testing.</p>
+              <div class="briefLinks" aria-label="API penetration testing links">
+                <a href="api-penetration-testing.html">API pentest</a>
+                <a href="penetration-testing.html">All penetration testing</a>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <h3 class="cardTitle">VAPT services</h3>
+              <p class="cardBody">Combine vulnerability assessment with penetration testing to prioritize issues by real risk.</p>
+              <div class="briefLinks" aria-label="VAPT links">
+                <a href="vapt.html">VAPT services</a>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <h3 class="cardTitle">Cloud security assessment</h3>
+              <p class="cardBody">Cloud posture review, IAM hardening, secrets handling, and logging coverage for AWS, Azure, and GCP.</p>
+              <div class="briefLinks" aria-label="Cloud security assessment links">
+                <a href="cloud-security.html">Cloud security assessment</a>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <h3 class="cardTitle">Security audit support</h3>
+              <p class="cardBody">Technical security audits and readiness work for SOC 2, ISO 27001, PCI DSS, and customer due diligence.</p>
+              <div class="briefLinks" aria-label="Security audit links">
+                <a href="security-audit.html">Security audit</a>
+                <a href="compliance-readiness.html">Compliance readiness</a>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <h3 class="cardTitle">Incident response readiness</h3>
+              <p class="cardBody">Playbooks, tabletop exercises, logging checks, and escalation paths before the incident happens.</p>
+              <div class="briefLinks" aria-label="Incident response links">
+                <a href="incident-response.html">Incident response services</a>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <h3 class="cardTitle">Cybersecurity consulting</h3>
+              <p class="cardBody">Security consulting for architecture, hardening priorities, advisory support, and roadmaps.</p>
+              <div class="briefLinks" aria-label="Cybersecurity consulting links">
+                <a href="cybersecurity-consulting.html">Security consulting</a>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <h3 class="cardTitle">Network penetration testing</h3>
+              <p class="cardBody">Internal network testing for lateral movement, exposed services, privilege escalation, and segmentation gaps.</p>
+              <div class="briefLinks" aria-label="Network penetration testing links">
+                <a href="network-penetration-testing.html">Network pentest</a>
+                <a href="penetration-testing.html">All penetration testing</a>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <h3 class="cardTitle">Mobile application security testing</h3>
+              <p class="cardBody">Android and iOS security testing for token handling, storage, API trust, and sensitive flows.</p>
+              <div class="briefLinks" aria-label="Mobile application testing links">
+                <a href="mobile-application-security-testing.html">Mobile app testing</a>
+                <a href="vapt.html">VAPT services</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="approach" aria-label="Approach">
+        <div class="wrap">
+          <div class="sectionHead">
+            <h2 class="sectionTitle">A simple approach: clarity, then control</h2>
+            <p class="sectionSub">
+              Our goal is to help you understand your risk, fix what matters, and keep it from coming back.
+            </p>
+          </div>
+
+          <div class="steps">
+            <article class="step reveal">
+              <p class="stepIndex mono">01</p>
+              <h3 class="stepTitle">Assess</h3>
+              <p class="stepBody">We map your attack surface and validate real paths to impact.</p>
+            </article>
+            <article class="step reveal">
+              <p class="stepIndex mono">02</p>
+              <h3 class="stepTitle">Harden</h3>
+              <p class="stepBody">We prioritize fixes, implement guardrails, and remove fragile patterns.</p>
+            </article>
+            <article class="step reveal">
+              <p class="stepIndex mono">03</p>
+              <h3 class="stepTitle">Monitor</h3>
+              <p class="stepBody">We improve signal: detection rules, alert tuning, and log coverage.</p>
+            </article>
+            <article class="step reveal">
+              <p class="stepIndex mono">04</p>
+              <h3 class="stepTitle">Respond</h3>
+              <p class="stepBody">We build playbooks and run drills so response is calm and fast.</p>
+            </article>
+          </div>
+
+          <div class="callout reveal">
+            <div>
+              <h3 class="calloutTitle">Deliverables you can actually use</h3>
+              <p class="calloutBody">
+                Every engagement ends with a prioritized roadmap, evidence, and next steps that fit your team's
+                bandwidth.
+              </p>
+            </div>
+            <a class="btn primary" href="contact.html">Talk to us</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="case-studies" aria-label="Case studies">
+        <div class="wrap">
+          <div class="sectionHead">
+            <h2 class="sectionTitle">Case studies (anonymized)</h2>
+            <p class="sectionSub">
+              Examples of outcomes and patterns we commonly see in real environments.
+            </p>
+          </div>
+
+          <div class="stories">
+            <article class="story reveal">
+              <p class="storyTag mono">Fintech</p>
+              <h3 class="storyTitle">API authentication bypass prevented</h3>
+              <p class="storyBody">
+                We identified an authorization flaw on an internal service boundary and helped ship a fix plus tests.
+              </p>
+              <p class="storyMeta">Deliverables: exploit narrative, unit tests, regression checklist</p>
+            </article>
+
+            <article class="story reveal">
+              <p class="storyTag mono">SaaS</p>
+              <h3 class="storyTitle">Cloud IAM rightsized</h3>
+              <p class="storyBody">
+                We reduced excessive permissions and added guardrails to prevent privilege creep across deployments.
+              </p>
+              <p class="storyMeta">Deliverables: least privilege matrix, policy diff, Terraform patterns</p>
+            </article>
+
+            <article class="story reveal">
+              <p class="storyTag mono">Healthcare</p>
+              <h3 class="storyTitle">Incident readiness upgraded</h3>
+              <p class="storyBody">
+                We ran tabletop drills, improved log coverage, and built playbooks for high risk scenarios.
+              </p>
+              <p class="storyMeta">Deliverables: playbooks, drill report, logging checklist</p>
+            </article>
+          </div>
+
+          <div class="sectionCta reveal">
+            <a class="btn ghost" href="case-studies.html">See more case studies</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="about" aria-label="About">
+        <div class="wrap aboutGrid">
+          <div class="aboutCopy reveal">
+            <h2 class="sectionTitle">About Lex Technologies</h2>
+            <p class="sectionSub">
+              We're a cybersecurity company focused on measurable outcomes: fewer critical findings, better signal,
+              calmer incidents.
+            </p>
+
+            <div class="values">
+              <div class="value">
+                <p class="valueTitle">Truth over theater</p>
+                <p class="valueBody">We validate risk with evidence, not hype.</p>
+              </div>
+              <div class="value">
+                <p class="valueTitle">Make it shippable</p>
+                <p class="valueBody">Recommendations that fit your stack and team.</p>
+              </div>
+              <div class="value">
+                <p class="valueTitle">Defend the whole system</p>
+                <p class="valueBody">Identity, apps, cloud, and people: all connected.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="aboutPanel reveal" aria-label="Capability panel">
+            <div class="badgeGrid">
+              <div class="badge">
+                <p class="badgeTop mono">Coverage</p>
+                <p class="badgeBig">Web</p>
+                <p class="badgeSmall">Apps & APIs</p>
+              </div>
+              <div class="badge">
+                <p class="badgeTop mono">Coverage</p>
+                <p class="badgeBig">Cloud</p>
+                <p class="badgeSmall">IAM & posture</p>
+              </div>
+              <div class="badge">
+                <p class="badgeTop mono">Coverage</p>
+                <p class="badgeBig">IR</p>
+                <p class="badgeSmall">Readiness</p>
+              </div>
+              <div class="badge">
+                <p class="badgeTop mono">Coverage</p>
+                <p class="badgeBig">GRC</p>
+                <p class="badgeSmall">Controls</p>
+              </div>
+            </div>
+
+            <div class="quote">
+              <p class="quoteText">
+                "Security is not a checkbox. It's a feedback loop."
+              </p>
+              <p class="quoteMeta mono">Lex principle</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Contact call to action">
+        <div class="wrap">
+          <div class="callout reveal">
+            <div>
+              <h3 class="calloutTitle">Ready for a focused security assessment?</h3>
+              <p class="calloutBody">
+                Share your stack and timeline. We'll reply with a clear next step and a simple plan.
+              </p>
+            </div>
+            <a class="btn primary" href="contact.html">Contact Lex</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap footGrid">
+        <div class="footBrand">
+          <p class="footName">Lex Technologies</p>
+          <p class="footSub">
+            Cybersecurity & digital resilience for teams that ship fast.
+          </p>
+          <p class="micro">
+            <a class="mono" href="mailto:contact@lexcyberwall.com" data-email>contact@lexcyberwall.com</a>
+            &bull;
+            <a class="mono" href="mailto:security@lexcyberwall.com" data-security-email>security@lexcyberwall.com</a>
+          </p>
+        </div>
+
+        <div class="footCols" aria-label="Footer">
+          <div class="footCol">
+            <p class="footHead mono">Explore</p>
+            <a href="services.html">Services</a>
+            <a href="approach.html">Approach</a>
+            <a href="case-studies.html">Case studies</a>
+            <a href="resources.html">Resources</a>
+            <a href="clients.html">Clients</a>
+          </div>
+          <div class="footCol">
+            <p class="footHead mono">Company</p>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="#top">Back to top</a>
+          </div>
+          <div class="footCol">
+            <p class="footHead mono">Legal</p>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="security.html">Security disclosure</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap footBottom">
+        <p class="micro">&copy; <span data-year></span> Lex Technologies. All rights reserved.</p>
+        <p class="micro mono">
+          Vulnerability disclosure:
+          <a class="mono" href="mailto:security@lexcyberwall.com" data-security-email>security@lexcyberwall.com</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

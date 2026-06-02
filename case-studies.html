@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light only" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#f7f5ef" />
+
+    <title>Case Studies | Lex Technologies</title>
+    <meta
+      name="description"
+      content="Case studies and incident briefs from Lex Technologies: public incident lessons and sample engagement outcomes."
+    />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/logo-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="assets/logo-192.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <link rel="canonical" href="https://lexcyberwall.com/case-studies.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Case Studies | Lex Technologies" />
+    <meta
+      property="og:description"
+      content="Public incident briefs and sample engagement outcomes: real-world lessons translated into action."
+    />
+    <meta property="og:site_name" content="Lex Technologies" />
+    <meta property="og:url" content="https://lexcyberwall.com/case-studies.html" />
+    <meta property="og:image" content="https://lexcyberwall.com/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Case Studies | Lex Technologies" />
+    <meta
+      name="twitter:description"
+      content="Public incident briefs and sample engagement outcomes: real-world lessons translated into action."
+    />
+    <meta name="twitter:image" content="https://lexcyberwall.com/assets/og.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Lex Technologies",
+        "url": "https://lexcyberwall.com/",
+        "email": "contact@lexcyberwall.com",
+        "description": "Cybersecurity and digital resilience for teams that ship fast.",
+        "logo": "https://lexcyberwall.com/assets/logo-512.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1/108F, Pachapalayam",
+          "addressLocality": "Coimbatore",
+          "addressRegion": "Tamil Nadu",
+          "postalCode": "641107",
+          "addressCountry": "IN"
+        },
+        "contactPoint": [
+          { "@type": "ContactPoint", "contactType": "sales", "email": "contact@lexcyberwall.com", "availableLanguage": ["en"] },
+          { "@type": "ContactPoint", "contactType": "security", "email": "security@lexcyberwall.com", "availableLanguage": ["en"] }
+        ],
+        "areaServed": ["IN", "US", "EU", "AU"]
+      }
+    </script>
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/site.js" defer></script>
+    <script src="assets/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <canvas id="net" aria-hidden="true"></canvas>
+
+    <header class="top" data-elevate>
+      <div class="wrap topRow">
+        <a class="brand" href="index.html" aria-label="Lex Technologies home">
+          <span class="brandMark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" role="presentation">
+              <path
+                d="M24 4c7.4 5.2 14.7 5.4 18 5.4v16.2C42 37.5 33.7 43.6 24 46 14.3 43.6 6 37.5 6 25.6V9.4c3.3 0 10.6-.2 18-5.4Z"
+                fill="url(#g)"
+                stroke="rgba(6,16,24,.35)"
+                stroke-width="1.2"
+              />
+              <path
+                d="M24 13l9 19h-4.7l-1.8-4.1H21.5L19.7 32H15l9-19Zm.7 10.9-2.1-4.8-2.1 4.8h4.2Z"
+                fill="rgba(6,16,24,.88)"
+              />
+              <defs>
+                <linearGradient id="g" x1="10" y1="6" x2="40" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#16c7a2" />
+                  <stop offset=".55" stop-color="#aef2e4" />
+                  <stop offset="1" stop-color="#f7f5ef" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="brandText">
+            <span class="brandName">Lex</span>
+            <span class="brandSub">Technologies</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button class="navToggle" type="button" aria-controls="menu" aria-expanded="false">
+            <span class="navToggleBars" aria-hidden="true"></span>
+            <span class="navToggleText">Menu</span>
+          </button>
+          <div class="navMenu" id="menu">
+            <a href="services.html">Services</a>
+            <a href="approach.html">Approach</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="resources.html">Resources</a>
+            <a href="clients.html">Clients</a>
+            <a href="about.html">About</a>
+            <a class="navCta" href="contact.html">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="pageHero" id="top" aria-label="Case studies hero">
+        <div class="wrap pageHeroGrid">
+          <div class="reveal">
+            <p class="eyebrow">
+              <span class="pill">Case Studies</span>
+              <span class="eyebrowText">Public incidents &bull; Outcome examples</span>
+            </p>
+            <h1 class="pageTitle">Real-world lessons, translated into action.</h1>
+            <p class="pageLede">
+              Below are incident briefs based on public reporting, plus sample engagement outcome examples based on common
+              patterns we see in the field. We do not publish client identities or confidential details.
+            </p>
+            <div class="cta">
+              <a class="btn primary" href="contact.html">Discuss your environment</a>
+              <a class="btn ghost" href="services.html">View services</a>
+            </div>
+          </div>
+
+          <aside class="sideCard reveal" aria-label="How to use these briefs">
+            <p class="sideCardHead mono">How to use this page</p>
+            <ul class="sideCardList">
+              <li>Use incident briefs to calibrate risk</li>
+              <li>Use outcomes to understand deliverables</li>
+              <li>Use the contact page to request scope</li>
+            </ul>
+            <p class="sideCardMeta mono">No fear, just signal</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section alt" aria-label="Industry incident briefs">
+        <div class="wrap">
+          <div class="sectionHead">
+            <h2 class="sectionTitle">Industry incident briefs</h2>
+            <p class="sectionSub">
+              These briefs highlight repeatable technical and process lessons that show up across real incidents.
+            </p>
+          </div>
+
+          <div class="timeline">
+            <article class="brief reveal">
+              <p class="briefKicker mono">2020 &bull; Supply chain</p>
+              <h3 class="briefTitle">SolarWinds Orion compromise</h3>
+              <p class="briefBody">
+                A software supply-chain intrusion that enabled long-lived access through trusted updates.
+              </p>
+              <div class="briefLinks" aria-label="Key lesson">
+                <a href="approach.html">Lesson: trust boundaries</a>
+                <a href="services.html">Service: detection + hardening</a>
+              </div>
+            </article>
+
+            <article class="brief reveal">
+              <p class="briefKicker mono">2021 &bull; Ransomware</p>
+              <h3 class="briefTitle">Colonial Pipeline disruption</h3>
+              <p class="briefBody">
+                Operational disruption driven by ransomware and business-level decision impact.
+              </p>
+              <div class="briefLinks" aria-label="Key lesson">
+                <a href="approach.html">Lesson: response readiness</a>
+                <a href="services.html">Service: IR drills</a>
+              </div>
+            </article>
+
+            <article class="brief reveal">
+              <p class="briefKicker mono">2021 &bull; Vulnerability</p>
+              <h3 class="briefTitle">Log4Shell (Log4j) exploitation</h3>
+              <p class="briefBody">
+                A critical library vulnerability that demonstrated why inventory, patch cadence, and exposure mapping matter.
+              </p>
+              <div class="briefLinks" aria-label="Key lesson">
+                <a href="approach.html">Lesson: asset inventory</a>
+                <a href="services.html">Service: hardening sprint</a>
+              </div>
+            </article>
+
+            <article class="brief reveal">
+              <p class="briefKicker mono">2022 &bull; Identity</p>
+              <h3 class="briefTitle">Uber intrusion (social engineering)</h3>
+              <p class="briefBody">
+                A reminder that identity workflows and helpdesk processes can be exploited to gain privileged access.
+              </p>
+              <div class="briefLinks" aria-label="Key lesson">
+                <a href="approach.html">Lesson: identity controls</a>
+                <a href="services.html">Service: hardening + monitoring</a>
+              </div>
+            </article>
+
+            <article class="brief reveal">
+              <p class="briefKicker mono">2022 &bull; Third-party</p>
+              <h3 class="briefTitle">LastPass incident</h3>
+              <p class="briefBody">
+                A strong example of why key management, segmentation, and vendor risk posture matter even for security tools.
+              </p>
+              <div class="briefLinks" aria-label="Key lesson">
+                <a href="approach.html">Lesson: trust boundaries</a>
+                <a href="services.html">Service: security program</a>
+              </div>
+            </article>
+
+            <article class="brief reveal">
+              <p class="briefKicker mono">2023 &bull; Third-party</p>
+              <h3 class="briefTitle">Okta support-system incident</h3>
+              <p class="briefBody">
+                A reminder that support tools and admin workflows are high-value targets and need strict controls.
+              </p>
+              <div class="briefLinks" aria-label="Key lesson">
+                <a href="approach.html">Lesson: admin controls</a>
+                <a href="services.html">Service: IAM review</a>
+              </div>
+            </article>
+
+            <article class="brief reveal">
+              <p class="briefKicker mono">2023 &bull; Social engineering</p>
+              <h3 class="briefTitle">MGM Resorts disruption</h3>
+              <p class="briefBody">
+                A widely discussed incident that reinforced helpdesk controls, identity verification, and containment readiness.
+              </p>
+              <div class="briefLinks" aria-label="Key lesson">
+                <a href="approach.html">Lesson: response readiness</a>
+                <a href="services.html">Service: IR drills</a>
+              </div>
+            </article>
+
+            <article class="brief reveal">
+              <p class="briefKicker mono">2023 &bull; Mass exploitation</p>
+              <h3 class="briefTitle">MOVEit Transfer exploitation wave</h3>
+              <p class="briefBody">
+                A widely exploited edge product vulnerability that highlighted exposure, patching, and monitoring gaps.
+              </p>
+              <div class="briefLinks" aria-label="Key lesson">
+                <a href="approach.html">Lesson: edge visibility</a>
+                <a href="services.html">Service: monitoring</a>
+              </div>
+            </article>
+
+            <article class="brief reveal">
+              <p class="briefKicker mono">2024 &bull; Ransomware</p>
+              <h3 class="briefTitle">Change Healthcare outage</h3>
+              <p class="briefBody">
+                A major operational impact event that reinforced segmentation, identity hygiene, and recovery planning.
+              </p>
+              <div class="briefLinks" aria-label="Key lesson">
+                <a href="approach.html">Lesson: blast-radius reduction</a>
+                <a href="services.html">Service: hardening + readiness</a>
+              </div>
+            </article>
+
+            <article class="brief reveal">
+              <p class="briefKicker mono">2024 &bull; Credential abuse</p>
+              <h3 class="briefTitle">Snowflake customer account intrusions</h3>
+              <p class="briefBody">
+                A widely discussed example of why identity controls, MFA enforcement, and credential monitoring are critical.
+              </p>
+              <div class="briefLinks" aria-label="Key lesson">
+                <a href="approach.html">Lesson: identity first</a>
+                <a href="services.html">Service: IAM + monitoring</a>
+              </div>
+            </article>
+
+            <article class="brief reveal">
+              <p class="briefKicker mono">Always &bull; Pattern</p>
+              <h3 class="briefTitle">The repeatable pattern</h3>
+              <p class="briefBody">
+                Most incidents combine identity weakness, excessive privilege, missing detections, and fragile processes.
+              </p>
+              <div class="briefLinks" aria-label="Key lesson">
+                <a href="approach.html">Our approach</a>
+                <a href="contact.html">Get an assessment</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Outcome examples">
+        <div class="wrap">
+          <div class="sectionHead">
+            <h2 class="sectionTitle">Engagement outcomes (examples)</h2>
+            <p class="sectionSub">Examples of deliverables and fixes teams ship after a focused engagement.</p>
+          </div>
+
+          <div class="stories">
+            <article class="story reveal">
+              <p class="storyTag mono">Fintech</p>
+              <h3 class="storyTitle">Authorization gaps eliminated</h3>
+              <p class="storyBody">
+                We found an IDOR-style authorization flaw across service boundaries and helped ship a fix with tests.
+              </p>
+              <p class="storyMeta">Deliverables: exploit narrative, unit tests, regression checklist</p>
+            </article>
+
+            <article class="story reveal">
+              <p class="storyTag mono">SaaS</p>
+              <h3 class="storyTitle">Cloud IAM rightsized</h3>
+              <p class="storyBody">
+                We reduced excessive permissions and added guardrails to prevent privilege creep across deployments.
+              </p>
+              <p class="storyMeta">Deliverables: least-privilege matrix, policy diff, Terraform patterns</p>
+            </article>
+
+            <article class="story reveal">
+              <p class="storyTag mono">Healthcare</p>
+              <h3 class="storyTitle">Incident readiness upgraded</h3>
+              <p class="storyBody">
+                We ran tabletop drills, improved log coverage, and built playbooks for high-risk scenarios.
+              </p>
+              <p class="storyMeta">Deliverables: playbooks, drill report, logging checklist</p>
+            </article>
+
+            <article class="story reveal">
+              <p class="storyTag mono">E-commerce</p>
+              <h3 class="storyTitle">Session controls hardened</h3>
+              <p class="storyBody">
+                We tightened session settings, token lifecycles, and account recovery flows to reduce account takeover risk.
+              </p>
+              <p class="storyMeta">Deliverables: secure session standard, implementation checklist</p>
+            </article>
+
+            <article class="story reveal">
+              <p class="storyTag mono">Enterprise</p>
+              <h3 class="storyTitle">Logging coverage mapped</h3>
+              <p class="storyBody">
+                We created a coverage map for identity and data access events and helped implement high-signal detections.
+              </p>
+              <p class="storyMeta">Deliverables: coverage map, detection backlog, runbooks</p>
+            </article>
+
+            <article class="story reveal">
+              <p class="storyTag mono">B2B</p>
+              <h3 class="storyTitle">Secure SDLC guardrails added</h3>
+              <p class="storyBody">
+                We added CI checks for secrets, dependencies, and risky config to prevent repeated classes of issues.
+              </p>
+              <p class="storyMeta">Deliverables: CI templates, policy-as-code patterns</p>
+            </article>
+          </div>
+
+          <div class="sectionCta reveal">
+            <a class="btn ghost" href="contact.html">Request a similar engagement</a>
+          </div>
+          <p class="micro reveal">These examples do not reference a specific client.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap footGrid">
+        <div class="footBrand">
+          <p class="footName">Lex Technologies</p>
+          <p class="footSub">Cybersecurity &amp; digital resilience for teams that ship fast.</p>
+          <p class="micro">
+            <a class="mono" href="mailto:contact@lexcyberwall.com" data-email>contact@lexcyberwall.com</a>
+            &bull;
+            <a class="mono" href="mailto:security@lexcyberwall.com" data-security-email>security@lexcyberwall.com</a>
+          </p>
+        </div>
+
+        <div class="footCols" aria-label="Footer">
+          <div class="footCol">
+            <p class="footHead mono">Explore</p>
+            <a href="services.html">Services</a>
+            <a href="approach.html">Approach</a>
+            <a href="case-studies.html">Case studies</a>
+            <a href="resources.html">Resources</a>
+            <a href="clients.html">Clients</a>
+          </div>
+          <div class="footCol">
+            <p class="footHead mono">Company</p>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="#top">Back to top</a>
+          </div>
+          <div class="footCol">
+            <p class="footHead mono">Legal</p>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="security.html">Security disclosure</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap footBottom">
+        <p class="micro">&copy; <span data-year></span> Lex Technologies. All rights reserved.</p>
+        <p class="micro mono">
+          Vulnerability disclosure:
+          <a class="mono" href="mailto:security@lexcyberwall.com" data-security-email>security@lexcyberwall.com</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

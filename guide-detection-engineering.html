@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light only" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#f7f5ef" />
+
+    <title>Detection Engineering Guide (Logs to Signal) | Lex Technologies</title>
+    <meta
+      name="description"
+      content="Detection engineering guide: turn logs into usable signal with a use-case backlog, alert tuning, runbooks, and measurable response. Built for modern teams."
+    />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/logo-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="assets/logo-192.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <link rel="canonical" href="https://lexcyberwall.com/guide-detection-engineering.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Detection Engineering Guide (Logs to Signal) | Lex Technologies" />
+    <meta
+      property="og:description"
+      content="A practical guide to build monitoring that works: coverage mapping, use-case backlog, tuned alerts, and runbooks that teams actually use."
+    />
+    <meta property="og:site_name" content="Lex Technologies" />
+    <meta property="og:url" content="https://lexcyberwall.com/guide-detection-engineering.html" />
+    <meta property="og:image" content="https://lexcyberwall.com/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Detection Engineering Guide (Logs to Signal) | Lex Technologies" />
+    <meta
+      name="twitter:description"
+      content="A practical guide to build monitoring that works: coverage mapping, use-case backlog, tuned alerts, and runbooks that teams actually use."
+    />
+    <meta name="twitter:image" content="https://lexcyberwall.com/assets/og.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Lex Technologies",
+        "url": "https://lexcyberwall.com/",
+        "email": "contact@lexcyberwall.com",
+        "description": "Cybersecurity and digital resilience for teams that ship fast.",
+        "logo": "https://lexcyberwall.com/assets/logo-512.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1/108F, Pachapalayam",
+          "addressLocality": "Coimbatore",
+          "addressRegion": "Tamil Nadu",
+          "postalCode": "641107",
+          "addressCountry": "IN"
+        },
+        "contactPoint": [
+          { "@type": "ContactPoint", "contactType": "sales", "email": "contact@lexcyberwall.com", "availableLanguage": ["en"] },
+          { "@type": "ContactPoint", "contactType": "security", "email": "security@lexcyberwall.com", "availableLanguage": ["en"] }
+        ],
+        "areaServed": ["IN", "US", "EU", "AU"]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "From logs to signal: how to build detections that stick",
+        "description": "Detection engineering guide: coverage mapping, use-case backlog, tuned alerts, and runbooks for fast, calm response.",
+        "datePublished": "2026-04-09",
+        "dateModified": "2026-04-09",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://lexcyberwall.com/guide-detection-engineering.html" },
+        "author": { "@type": "Organization", "name": "Lex Technologies" },
+        "publisher": { "@type": "Organization", "name": "Lex Technologies", "logo": { "@type": "ImageObject", "url": "https://lexcyberwall.com/assets/logo-512.png" } },
+        "inLanguage": "en",
+        "keywords": ["detection engineering", "security monitoring", "SIEM", "incident response", "security operations"]
+      }
+    </script>
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/site.js" defer></script>
+    <script src="assets/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <canvas id="net" aria-hidden="true"></canvas>
+
+    <header class="top" data-elevate>
+      <div class="wrap topRow">
+        <a class="brand" href="index.html" aria-label="Lex Technologies home">
+          <span class="brandMark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" role="presentation">
+              <path
+                d="M24 4c7.4 5.2 14.7 5.4 18 5.4v16.2C42 37.5 33.7 43.6 24 46 14.3 43.6 6 37.5 6 25.6V9.4c3.3 0 10.6-.2 18-5.4Z"
+                fill="url(#g)"
+                stroke="rgba(6,16,24,.35)"
+                stroke-width="1.2"
+              />
+              <path
+                d="M24 13l9 19h-4.7l-1.8-4.1H21.5L19.7 32H15l9-19Zm.7 10.9-2.1-4.8-2.1 4.8h4.2Z"
+                fill="rgba(6,16,24,.88)"
+              />
+              <defs>
+                <linearGradient id="g" x1="10" y1="6" x2="40" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#16c7a2" />
+                  <stop offset=".55" stop-color="#aef2e4" />
+                  <stop offset="1" stop-color="#f7f5ef" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="brandText">
+            <span class="brandName">Lex</span>
+            <span class="brandSub">Technologies</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button class="navToggle" type="button" aria-controls="menu" aria-expanded="false">
+            <span class="navToggleBars" aria-hidden="true"></span>
+            <span class="navToggleText">Menu</span>
+          </button>
+          <div class="navMenu" id="menu">
+            <a href="services.html">Services</a>
+            <a href="approach.html">Approach</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="resources.html">Resources</a>
+            <a href="clients.html">Clients</a>
+            <a href="about.html">About</a>
+            <a class="navCta" href="contact.html">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="pageHero" id="top" aria-label="Detection engineering guide hero">
+        <div class="wrap pageHeroGrid">
+          <div class="reveal">
+            <p class="eyebrow">
+              <span class="pill">Guide</span>
+              <span class="eyebrowText">Monitoring &bull; detections &bull; runbooks</span>
+            </p>
+            <h1 class="pageTitle">From logs to signal: detections that stick.</h1>
+            <p class="pageLede">
+              Most alert programs fail because they start too big and have no ownership. This guide shows a practical way to
+              build coverage, ship a small set of high-value detections, and measure response.
+            </p>
+            <div class="cta">
+              <a class="btn primary" href="services.html">Monitoring services</a>
+              <a class="btn ghost" href="resources.html">Back to resources</a>
+            </div>
+          </div>
+
+          <aside class="sideCard reveal" aria-label="Guide quick facts">
+            <p class="sideCardHead mono">At a glance</p>
+            <ul class="sideCardList">
+              <li>Start small: 8-12 use cases</li>
+              <li>Define ownership and runbooks</li>
+              <li>Measure MTTA and false positives</li>
+            </ul>
+            <p class="sideCardMeta mono">Updated: 9 April 2026</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section alt" aria-label="Detection engineering guide content">
+        <div class="wrap legalGrid">
+          <div class="docCard reveal">
+            <p class="docMeta mono">Guide</p>
+            <h2 class="sectionTitle">A detection engineering playbook</h2>
+            <p class="sectionSub">Monitoring built for humans: clear alerts, clear actions, clear ownership.</p>
+
+            <div class="policy" role="document" aria-label="Detection engineering guide">
+              <h3>1. Define what “success” means</h3>
+              <p>Pick a few measurable outcomes and align everyone on them.</p>
+              <ul>
+                <li>Mean time to acknowledge (MTTA) and contain (MTTC)</li>
+                <li>Coverage for identity, privilege, and data access events</li>
+                <li>False positive rate and alert fatigue (how many pages per week)</li>
+              </ul>
+
+              <h3>2. Create a use-case backlog</h3>
+              <p>Start with the threats that actually happen, and the data you can realistically collect.</p>
+              <ul>
+                <li>Identity anomalies: MFA bypass indicators, impossible travel, new device logins</li>
+                <li>Privilege changes: admin role grants, new service principals, policy changes</li>
+                <li>Data access: mass export, unusual queries, new integrations pulling data</li>
+                <li>App abuse: brute force, credential stuffing, token replay, admin workflow abuse</li>
+              </ul>
+
+              <h3>3. Map log coverage before you write alerts</h3>
+              <p>Most “detections” fail because the underlying telemetry is missing or inconsistent.</p>
+              <ul>
+                <li>Identity provider logs (SSO, MFA, user lifecycle)</li>
+                <li>Cloud audit logs (API calls, IAM, network changes)</li>
+                <li>Application audit logs for sensitive actions</li>
+                <li>Endpoint and container runtime signals where applicable</li>
+              </ul>
+
+              <h3>4. Build alerts that include context</h3>
+              <p>Every alert should answer: what happened, why it matters, and what to do next.</p>
+              <ul>
+                <li>Include actor, target, time, and evidence links (log IDs)</li>
+                <li>Assign severity based on impact, not “how rare” it is</li>
+                <li>Write one primary action and one escalation action</li>
+              </ul>
+
+              <h3>5. Add runbooks and ownership</h3>
+              <p>A detection without a runbook is just noise.</p>
+              <ul>
+                <li>Who is responsible for triage during business hours and after hours?</li>
+                <li>What is the first containment action (disable token, block IP, revoke role)?</li>
+                <li>What evidence should be preserved, and where?</li>
+              </ul>
+
+              <h3>6. Tune relentlessly</h3>
+              <p>Good detections get better with feedback, not with more rules.</p>
+              <ul>
+                <li>Record “why was this alert useful or not useful?” after each incident.</li>
+                <li>Reduce scope (and increase accuracy) before you expand coverage.</li>
+                <li>Move “expected noisy events” into dashboards instead of pages.</li>
+              </ul>
+
+              <h3>7. Review monthly and ship improvements</h3>
+              <p>Security monitoring is a product. Give it a cadence.</p>
+              <ul>
+                <li>Monthly review: top alerts, top gaps, top false positives</li>
+                <li>Quarterly tabletop drill to validate response and comms</li>
+                <li>Post-incident: convert lessons into new detections or guardrails</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="sideCard reveal" aria-label="Starter detections">
+            <p class="sideCardHead mono">Starter detections</p>
+            <ul class="sideCardList">
+              <li>New admin role granted</li>
+              <li>MFA disabled or bypass signals</li>
+              <li>API key created outside CI</li>
+              <li>Large data export or download spike</li>
+              <li>Impossible travel + token reuse</li>
+            </ul>
+            <p class="sideCardMeta mono">Next: <a href="checklist-high-signal-detections.html">high-signal checklist</a></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" aria-label="Next steps">
+        <div class="wrap">
+          <div class="callout reveal">
+            <div>
+              <h3 class="calloutTitle">Want detections tuned for your stack?</h3>
+              <p class="calloutBody">
+                We can build a coverage map, ship initial detections with runbooks, and hand off ownership cleanly. Lex
+                supports teams globally from India.
+              </p>
+            </div>
+            <a class="btn primary" href="contact.html">Talk to Lex</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap footGrid">
+        <div class="footBrand">
+          <p class="footName">Lex Technologies</p>
+          <p class="footSub">Cybersecurity &amp; digital resilience for teams that ship fast.</p>
+          <p class="micro">
+            <a class="mono" href="mailto:contact@lexcyberwall.com" data-email>contact@lexcyberwall.com</a>
+            &bull;
+            <a class="mono" href="mailto:security@lexcyberwall.com" data-security-email>security@lexcyberwall.com</a>
+          </p>
+        </div>
+
+        <div class="footCols" aria-label="Footer">
+          <div class="footCol">
+            <p class="footHead mono">Explore</p>
+            <a href="services.html">Services</a>
+            <a href="approach.html">Approach</a>
+            <a href="case-studies.html">Case studies</a>
+            <a href="resources.html">Resources</a>
+            <a href="clients.html">Clients</a>
+          </div>
+          <div class="footCol">
+            <p class="footHead mono">Company</p>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="#top">Back to top</a>
+          </div>
+          <div class="footCol">
+            <p class="footHead mono">Legal</p>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="security.html">Security disclosure</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap footBottom">
+        <p class="micro">&copy; <span data-year></span> Lex Technologies. All rights reserved.</p>
+        <p class="micro mono">
+          Vulnerability disclosure:
+          <a class="mono" href="mailto:security@lexcyberwall.com" data-security-email>security@lexcyberwall.com</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
+

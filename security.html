@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light only" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#f7f5ef" />
+
+    <title>Vulnerability Disclosure | Lex Technologies</title>
+    <meta
+      name="description"
+      content="Report security vulnerabilities related to lexcyberwall.com. Lex Technologies' vulnerability disclosure policy and reporting guidelines."
+    />
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/logo-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="assets/logo-192.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <link rel="canonical" href="https://lexcyberwall.com/security.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Vulnerability Disclosure | Lex Technologies" />
+    <meta
+      property="og:description"
+      content="Report security vulnerabilities related to lexcyberwall.com. Lex Technologies' disclosure policy and reporting guidelines."
+    />
+    <meta property="og:site_name" content="Lex Technologies" />
+    <meta property="og:url" content="https://lexcyberwall.com/security.html" />
+    <meta property="og:image" content="https://lexcyberwall.com/assets/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Vulnerability Disclosure | Lex Technologies" />
+    <meta
+      name="twitter:description"
+      content="Report security vulnerabilities related to lexcyberwall.com. Lex Technologies' disclosure policy and reporting guidelines."
+    />
+    <meta name="twitter:image" content="https://lexcyberwall.com/assets/og.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Lex Technologies",
+        "url": "https://lexcyberwall.com/",
+        "email": "contact@lexcyberwall.com",
+        "description": "Cybersecurity and digital resilience for teams that ship fast.",
+        "logo": "https://lexcyberwall.com/assets/logo-512.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1/108F, Pachapalayam",
+          "addressLocality": "Coimbatore",
+          "addressRegion": "Tamil Nadu",
+          "postalCode": "641107",
+          "addressCountry": "IN"
+        },
+        "contactPoint": [
+          { "@type": "ContactPoint", "contactType": "sales", "email": "contact@lexcyberwall.com", "availableLanguage": ["en"] },
+          { "@type": "ContactPoint", "contactType": "security", "email": "security@lexcyberwall.com", "availableLanguage": ["en"] }
+        ],
+        "areaServed": ["IN", "US", "EU", "AU"]
+      }
+    </script>
+
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/site.js" defer></script>
+    <script src="assets/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <canvas id="net" aria-hidden="true"></canvas>
+
+    <header class="top" data-elevate>
+      <div class="wrap topRow">
+        <a class="brand" href="index.html" aria-label="Lex Technologies home">
+          <span class="brandMark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" role="presentation">
+              <path
+                d="M24 4c7.4 5.2 14.7 5.4 18 5.4v16.2C42 37.5 33.7 43.6 24 46 14.3 43.6 6 37.5 6 25.6V9.4c3.3 0 10.6-.2 18-5.4Z"
+                fill="url(#g)"
+                stroke="rgba(6,16,24,.35)"
+                stroke-width="1.2"
+              />
+              <path
+                d="M24 13l9 19h-4.7l-1.8-4.1H21.5L19.7 32H15l9-19Zm.7 10.9-2.1-4.8-2.1 4.8h4.2Z"
+                fill="rgba(6,16,24,.88)"
+              />
+              <defs>
+                <linearGradient id="g" x1="10" y1="6" x2="40" y2="44" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#16c7a2" />
+                  <stop offset=".55" stop-color="#aef2e4" />
+                  <stop offset="1" stop-color="#f7f5ef" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="brandText">
+            <span class="brandName">Lex</span>
+            <span class="brandSub">Technologies</span>
+          </span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <button class="navToggle" type="button" aria-controls="menu" aria-expanded="false">
+            <span class="navToggleBars" aria-hidden="true"></span>
+            <span class="navToggleText">Menu</span>
+          </button>
+          <div class="navMenu" id="menu">
+            <a href="services.html">Services</a>
+            <a href="approach.html">Approach</a>
+            <a href="case-studies.html">Case Studies</a>
+            <a href="resources.html">Resources</a>
+            <a href="clients.html">Clients</a>
+            <a href="about.html">About</a>
+            <a class="navCta" href="contact.html">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="pageHero" id="top" aria-label="Vulnerability disclosure hero">
+        <div class="wrap pageHeroGrid">
+          <div class="reveal">
+            <p class="eyebrow">
+              <span class="pill">Security</span>
+              <span class="eyebrowText">Vulnerability disclosure policy</span>
+            </p>
+            <h1 class="pageTitle">Report security issues responsibly.</h1>
+            <p class="pageLede">
+              If you believe you have found a security vulnerability related to <span class="mono">lexcyberwall.com</span>,
+              please report it so we can fix it quickly and protect users.
+            </p>
+            <div class="cta">
+              <a class="btn primary" href="mailto:security@lexcyberwall.com" data-security-email>Email security@lexcyberwall.com</a>
+              <a class="btn ghost" href="contact.html">General contact</a>
+            </div>
+          </div>
+
+          <aside class="sideCard reveal" aria-label="Disclosure quick facts">
+            <p class="sideCardHead mono">Quick facts</p>
+            <ul class="sideCardList">
+              <li>Acknowledge within 2 business days</li>
+              <li>Coordinated disclosure encouraged</li>
+              <li>Good-faith research safe harbor</li>
+              <li>No public bug bounty program at this time</li>
+            </ul>
+            <p class="sideCardMeta mono">Last updated: 9 April 2026</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section alt" aria-label="Disclosure policy">
+        <div class="wrap legalGrid">
+          <div class="docCard reveal">
+            <p class="docMeta mono">Last updated: 9 April 2026</p>
+            <h2 class="sectionTitle">Vulnerability Disclosure Policy</h2>
+            <p class="sectionSub">
+              This policy is intended to make reporting clear, safe, and fast for security researchers and customers.
+            </p>
+
+            <div class="policy" role="document" aria-label="Vulnerability disclosure policy">
+              <h3>1. Scope</h3>
+              <p>This policy covers security issues affecting:</p>
+              <ul>
+                <li>The <span class="mono">lexcyberwall.com</span> website and any subdomains that point to this site.</li>
+                <li>Public pages, forms, and static assets served from the domain.</li>
+              </ul>
+              <p>
+                If you are unsure whether a target is in-scope, send a note to
+                <a href="mailto:security@lexcyberwall.com" data-security-email>security@lexcyberwall.com</a> first.
+              </p>
+
+              <h3>2. How to report</h3>
+              <p>Email us at <a href="mailto:security@lexcyberwall.com" data-security-email>security@lexcyberwall.com</a> with:</p>
+              <ul>
+                <li>A clear description of the issue and security impact.</li>
+                <li>Steps to reproduce (proof-of-concept where appropriate).</li>
+                <li>Affected URLs, parameters, and any relevant request/response details.</li>
+                <li>Any mitigation ideas if you have them.</li>
+              </ul>
+              <p>
+                For quick validation, include the smallest possible proof that demonstrates risk. Please avoid sending
+                sensitive personal data. If you need an encrypted channel, ask and we will coordinate.
+              </p>
+
+              <h3>3. What we ask you to do</h3>
+              <ul>
+                <li>Act in good faith and avoid privacy violations, data destruction, or disruption.</li>
+                <li>Do not use social engineering, phishing, or physical attacks.</li>
+                <li>Do not run denial-of-service or high-volume automated scanning.</li>
+                <li>Do not publicly disclose until we confirm a fix or agree on a timeline.</li>
+              </ul>
+
+              <h3>4. Our response process</h3>
+              <ul>
+                <li>We will acknowledge receipt within 2 business days.</li>
+                <li>We will triage and keep you updated on progress where possible.</li>
+                <li>We will coordinate on a reasonable disclosure timeline based on severity and fix complexity.</li>
+              </ul>
+
+              <h3>5. Safe harbor</h3>
+              <p>
+                If you follow this policy and act in good faith, we will not pursue legal action against you for
+                authorized testing and disclosure activities related to in-scope targets. This does not cover actions
+                outside the bounds of this policy or illegal activity.
+              </p>
+
+              <h3>6. Out of scope</h3>
+              <p>The following are typically out of scope:</p>
+              <ul>
+                <li>Issues in third-party services not controlled by Lex Technologies.</li>
+                <li>Missing security headers on non-sensitive public content, where there is no demonstrable impact.</li>
+                <li>Best-practice recommendations without a security impact.</li>
+                <li>Denial-of-service testing and performance testing.</li>
+              </ul>
+
+              <h3>7. Security contact file</h3>
+              <p>
+                Our machine-readable contact information is available at
+                <a href=".well-known/security.txt" class="mono">/.well-known/security.txt</a>.
+              </p>
+
+              <h3>8. Contact</h3>
+              <p>
+                Lex Technologies<br />
+                1/108F, Pachapalayam, Coimbatore - 641107, Tamil Nadu, India<br />
+                Security: <a href="mailto:security@lexcyberwall.com" data-security-email>security@lexcyberwall.com</a><br />
+                General: <a href="mailto:contact@lexcyberwall.com" data-email>contact@lexcyberwall.com</a>
+              </p>
+            </div>
+          </div>
+
+          <aside class="sideCard reveal" aria-label="Reporting checklist">
+            <p class="sideCardHead mono">Reporting checklist</p>
+            <ul class="sideCardList">
+              <li>Impact explained clearly</li>
+              <li>Repro steps included</li>
+              <li>Minimal PoC</li>
+              <li>Your preferred contact method</li>
+            </ul>
+            <p class="sideCardMeta mono">security@lexcyberwall.com</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap footGrid">
+        <div class="footBrand">
+          <p class="footName">Lex Technologies</p>
+          <p class="footSub">Cybersecurity &amp; digital resilience for teams that ship fast.</p>
+          <p class="micro">
+            <a class="mono" href="mailto:contact@lexcyberwall.com" data-email>contact@lexcyberwall.com</a>
+            &bull;
+            <a class="mono" href="mailto:security@lexcyberwall.com" data-security-email>security@lexcyberwall.com</a>
+          </p>
+        </div>
+
+        <div class="footCols" aria-label="Footer">
+          <div class="footCol">
+            <p class="footHead mono">Explore</p>
+            <a href="services.html">Services</a>
+            <a href="approach.html">Approach</a>
+            <a href="case-studies.html">Case studies</a>
+            <a href="resources.html">Resources</a>
+            <a href="clients.html">Clients</a>
+          </div>
+          <div class="footCol">
+            <p class="footHead mono">Company</p>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="#top">Back to top</a>
+          </div>
+          <div class="footCol">
+            <p class="footHead mono">Legal</p>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="security.html">Security disclosure</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap footBottom">
+        <p class="micro">&copy; <span data-year></span> Lex Technologies. All rights reserved.</p>
+        <p class="micro mono">
+          Vulnerability disclosure:
+          <a class="mono" href="mailto:security@lexcyberwall.com" data-security-email>security@lexcyberwall.com</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
