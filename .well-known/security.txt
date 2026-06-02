@@ -1,0 +1,7 @@
+Contact: mailto:security@lexcyberwall.com
+Contact: mailto:contact@lexcyberwall.com
+Preferred-Languages: en
+Canonical: https://lexcyberwall.com/.well-known/security.txt
+Policy: https://lexcyberwall.com/security.html
+Hiring: https://lexcyberwall.com/contact.html
+Expires: 2027-04-09T00:00:00.000Z
