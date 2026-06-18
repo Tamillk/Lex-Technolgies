@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Lex Technologies">
+  <defs>
+    <linearGradient id="g" x1="14" y1="10" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#16c7a2"/>
+      <stop offset=".55" stop-color="#aef2e4"/>
+      <stop offset="1" stop-color="#f7f5ef"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 6c10 7 20 7.3 24.6 7.3V35c0 16.4-11.3 24.9-24.6 28C18.7 59.9 7.4 51.4 7.4 35V13.3C12 13.3 22 13 32 6Z" fill="url(#g)" stroke="rgba(6,16,24,.35)" stroke-width="1.6"/>
+  <path d="M32 18l11 25h-5.6l-2-4.9H28.6l-2 4.9H21l11-25Zm.9 14.3-2.6-6.1-2.6 6.1h5.2Z" fill="rgba(6,16,24,.88)"/>
+</svg>
+
